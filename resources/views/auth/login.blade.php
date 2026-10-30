@@ -5,7 +5,7 @@
 @section('content')
 <section class="login-layout">
     <div class="login-intro">
-        <span class="eyebrow">SIMBILIMBI · STUDENT SERVICES</span>
+        <span class="eyebrow">KYC · BIOMETRIC SERVICES</span>
         <h1>Know your student.<br><span>Capture with confidence.</span></h1>
         <p>Capture and verify student KYC documents and Biometrics in one secure place.</p>
         <div class="login-proof"><span class="proof-dot"></span> Staff access · Secure session</div>

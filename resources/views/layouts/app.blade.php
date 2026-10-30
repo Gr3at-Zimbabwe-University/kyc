@@ -30,7 +30,7 @@
     <main>
         @yield('content')
     </main>
-    <footer class="site-footer">KYC · Student records</footer>
+    <footer class="site-footer">· KYC ·</footer>
 </div>
 @stack('scripts')
 </body>
