@@ -1,0 +1,534 @@
+:root {
+    color-scheme: light;
+    --brand: #126b49;
+    --brand-dark: #0b4933;
+    --brand-soft: #e8f4ed;
+    --ink: #172b24;
+    --muted: #64746d;
+    --line: #dce7e0;
+    --surface: #ffffff;
+    --shadow: 0 24px 70px rgba(18, 54, 38, 0.14);
+}
+
+.app-nav {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    width: min(100%, 1080px);
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 0 auto 18px;
+}
+
+.app-nav a,
+.app-nav button {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 16px !important;
+    border: 1px solid rgba(18, 107, 73, 0.14) !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.92) !important;
+    color: var(--brand-dark) !important;
+    font: inherit !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(18, 54, 38, 0.08);
+    transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.app-nav a:hover,
+.app-nav button:hover {
+    transform: translateY(-1px);
+    background: var(--brand) !important;
+    color: #fff !important;
+    box-shadow: 0 8px 18px rgba(18, 107, 73, 0.18);
+}
+
+.capture-app-page {
+    background:
+        radial-gradient(ellipse at 12% 0%, rgba(18, 107, 73, 0.11), transparent 38%),
+        linear-gradient(145deg, #f3f8f4, #e8f0eb) !important;
+}
+
+.capture-app-page .app-nav {
+    width: min(100%, 1120px);
+}
+
+.capture-header {
+    width: min(100%, 1120px);
+    margin: 22px auto 28px;
+    padding: 28px 34px;
+    border-radius: 22px;
+    background: linear-gradient(115deg, #0b4933, #16724f);
+    color: #fff;
+    box-shadow: 0 18px 36px rgba(11, 73, 51, 0.2);
+}
+
+.capture-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #c5ead6;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+.capture-header h1 {
+    margin: 0 0 8px;
+    color: #fff !important;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.capture-header p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.capture-header strong {
+    color: #fff;
+}
+
+.capture-app-page .capture-workspace {
+    width: min(100%, 1120px);
+    max-width: 1120px;
+    padding: clamp(20px, 3vw, 34px);
+    border: 1px solid #e1ebe4;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 24px 60px rgba(23, 55, 39, 0.12);
+}
+
+.capture-app-page .capture-panel {
+    padding: 22px;
+    border: 1px solid #e6eee8;
+    border-radius: 18px;
+    background: #fbfdfb;
+}
+
+.capture-panel-title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 0 0 16px;
+    color: #91a198;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+}
+
+.capture-panel-title span {
+    color: var(--ink);
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+}
+
+.capture-app-page #my_camera,
+.capture-app-page #results {
+    min-height: 260px;
+}
+
+.capture-app-page #results {
+    margin-bottom: 14px;
+}
+
+.capture-app-page .capture-panel .btn {
+    width: 100%;
+    margin-top: 14px;
+}
+
+.capture-app-page .capture-workspace hr {
+    margin: 26px 0 18px;
+}
+
+.capture-app-page .capture-workspace p {
+    font-weight: 650;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 20px;
+    color: var(--ink);
+    background:
+        linear-gradient(135deg, rgba(241, 248, 243, 0.96), rgba(232, 241, 237, 0.88)),
+        url("image/bg.jpg") center / cover fixed;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.2;
+}
+
+h1 {
+    margin: 0 0 26px;
+    font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+}
+
+h2 {
+    margin: 0 0 22px;
+    font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+}
+
+p {
+    color: var(--muted);
+}
+
+.login-card,
+#studFetcher,
+#studDetails,
+.kyc-container,
+body > .container {
+    width: min(100%, 980px);
+    margin: 24px auto;
+    padding: clamp(24px, 5vw, 48px);
+    border: 1px solid rgba(255, 255, 255, 0.88);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+}
+
+.login-card {
+    width: min(100%, 620px);
+    padding: 42px clamp(24px, 6vw, 58px) 48px;
+    border-radius: 28px;
+    color: var(--ink);
+}
+
+.login-logo {
+    width: 92px !important;
+    margin: 0 auto 18px !important;
+    padding: 12px !important;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(18, 54, 38, 0.12) !important;
+}
+
+.login-title {
+    margin: 0 0 28px !important;
+    color: var(--ink) !important;
+    font-size: clamp(2rem, 5vw, 3rem) !important;
+    letter-spacing: -0.05em !important;
+}
+
+.login-table {
+    border-spacing: 0 12px !important;
+    color: var(--ink) !important;
+    font-size: 1rem !important;
+}
+
+.login-table td,
+.login-table td:first-child {
+    padding: 8px 6px !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em;
+}
+
+.login-table td[colspan="2"] {
+    height: auto !important;
+    padding-top: 12px !important;
+}
+
+.login-table button[type="submit"] {
+    position: static !important;
+    width: min(100%, 260px) !important;
+    margin: 0 !important;
+    padding: 12px 22px !important;
+    transform: none !important;
+}
+
+.input_field,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+.form-control,
+textarea,
+select {
+    min-height: 50px;
+    padding: 12px 15px !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 12px !important;
+    background: #fbfdfb !important;
+    color: var(--ink) !important;
+    font: inherit !important;
+    box-shadow: none !important;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.input_field:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+.form-control:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--brand) !important;
+    background: #fff !important;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(18, 107, 73, 0.12) !important;
+}
+
+input[type="submit"],
+button,
+.btn,
+.kyc-btn,
+a.signout-btn {
+    min-height: 48px;
+    padding: 12px 22px !important;
+    border: 0 !important;
+    border-radius: 12px !important;
+    background: var(--brand) !important;
+    color: #fff !important;
+    font: inherit !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(18, 107, 73, 0.18);
+    transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+input[type="submit"]:hover,
+button:hover,
+.btn:hover,
+.kyc-btn:hover,
+a.signout-btn:hover {
+    background: var(--brand-dark) !important;
+    color: #fff !important;
+    box-shadow: 0 10px 24px rgba(18, 107, 73, 0.24);
+    transform: translateY(-1px);
+}
+
+button:focus-visible,
+input[type="submit"]:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(18, 107, 73, 0.35);
+    outline-offset: 3px;
+}
+
+.login-card input[type="submit"],
+.login-card button[type="submit"] {
+    width: min(100%, 260px) !important;
+    border-radius: 12px !important;
+    font-size: 1.05rem !important;
+}
+
+#studFetcher,
+#studDetails {
+    width: min(100%, 760px);
+    padding: clamp(24px, 5vw, 42px);
+}
+
+#studFetcher h1,
+#studDetails h2 {
+    text-align: left;
+}
+
+#studFetcher label,
+#studDetails label {
+    margin: 14px 0 7px;
+    color: #344b40;
+    font-size: 0.9rem;
+    font-weight: 650;
+}
+
+#studFetcher input[type="text"],
+#studDetails input[type="text"] {
+    width: 100% !important;
+    margin-bottom: 4px;
+}
+
+#studDetails input[readonly] {
+    background: #f3f7f4 !important;
+    color: #53665c !important;
+}
+
+#studFetcher button,
+#studDetails input[type="submit"] {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.signout-btn {
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 2000;
+}
+
+a[href="capture_biometricpics.php"] {
+    border-radius: 12px !important;
+    background: var(--brand) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 8px 18px rgba(18, 107, 73, 0.18);
+}
+
+body > .container {
+    max-width: 1080px;
+}
+
+body > h1 {
+    width: min(100%, 1080px);
+    margin: 22px auto 28px;
+    text-align: center;
+}
+
+body > .container h1 {
+    text-align: center;
+}
+
+.container .row {
+    align-items: flex-start;
+}
+
+#my_camera,
+video {
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    min-height: 220px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid var(--line) !important;
+    border-radius: 16px !important;
+    background: #15241d;
+    object-fit: cover;
+    box-shadow: 0 10px 28px rgba(23, 43, 36, 0.12);
+}
+
+#results {
+    display: flex;
+    min-height: 220px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px !important;
+    border: 1px dashed #bbcec2 !important;
+    border-radius: 16px !important;
+    background: #f5f9f6 !important;
+    color: var(--muted);
+    text-align: center;
+}
+
+#results img {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.container hr {
+    margin: 28px 0;
+    border-color: var(--line);
+}
+
+.kyc-container {
+    max-width: 680px;
+    text-align: center;
+}
+
+.kyc-container h1 {
+    color: var(--ink) !important;
+}
+
+.kyc-btn {
+    width: min(100%, 380px) !important;
+    margin: 9px auto !important;
+    display: block !important;
+}
+
+#studentInfo {
+    border: 1px solid var(--line) !important;
+    border-radius: 16px !important;
+    background: #f5f9f6 !important;
+}
+
+#studentInfo strong {
+    color: var(--brand-dark) !important;
+}
+
+#preview-box {
+    border: 1px dashed #bbcec2 !important;
+    border-radius: 16px !important;
+    background: #f5f9f6 !important;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 18px 14px;
+        background-attachment: scroll;
+    }
+
+    .login-card,
+    #studFetcher,
+    #studDetails,
+    .kyc-container,
+    body > .container {
+        margin: 18px auto;
+        padding: 24px 20px;
+        border-radius: 20px;
+    }
+
+    .login-table td:first-child {
+        width: 30%;
+    }
+
+    .login-table td {
+        padding: 6px 3px !important;
+    }
+
+    .login-table input {
+        width: 100% !important;
+    }
+
+    .signout-btn {
+        position: static !important;
+        display: inline-block !important;
+        margin: 0 0 12px 8px !important;
+    }
+
+    .app-nav {
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    #my_camera,
+    video,
+    #results {
+        min-height: 180px;
+    }
+
+    .container .row > [class*="col-"] {
+        margin-bottom: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
